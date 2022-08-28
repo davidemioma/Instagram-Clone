@@ -28,8 +28,8 @@ const Account = ({ account }: Props) => {
     () =>
       onSnapshot(doc(db, "users", `${user.uid}`), (snapshot: any) =>
         setMyAccount({
-          id: snapshot.id,
-          ...snapshot.data(),
+          id: snapshot?.id,
+          ...snapshot?.data(),
         })
       ),
     [db]
