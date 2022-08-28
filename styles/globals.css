@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-container {
+    @apply flex flex-col w-full space-y-1;
+  }
+
+  .modal {
+    @apply absolute w-[230px] rounded top-10 right-0 bg-white shadow-md after:absolute after:bottom-full after:right-0 after:block after:-translate-x-1/2 after:border-8 after:border-t-0 after:border-transparent after:border-b-white after:content-[''];
+  }
+
+  .label {
+    @apply text-sm text-gray-400;
+  }
+
+  .input {
+    @apply border-b pb-1 outline-none;
+  }
+
+  .on-hover {
+    @apply cursor-pointer hover:scale-105 transition-transform duration-300;
+  }
+
+  .options {
+    @apply p-2 px-4 flex items-center space-x-3 cursor-pointer hover:bg-gray-100;
+  }
+
+  .profileBtn {
+    @apply flex py-4 items-center space-x-2 text-sm uppercase cursor-pointer tracking-wider font-semibold;
+  }
+
+  .followBtn {
+    @apply flex items-center justify-center bg-[#458eff] text-white py-0.5 px-6 font-semibold rounded;
+  }
+
+  .unfollowBtn {
+    @apply flex items-center justify-center border py-0.5 px-6 rounded;
+  }
+}
