@@ -49,7 +49,7 @@ const Account = ({ account }: Props) => {
   //Fetching the current user following
   useEffect(
     () =>
-      onSnapshot(collection(db, "users", user.uid, "following"), (snapshot) =>
+      onSnapshot(collection(db, "users", user?.uid, "following"), (snapshot) =>
         setFollowing(
           snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }))
         )
