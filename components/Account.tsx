@@ -37,6 +37,8 @@ const Account = ({ account }: Props) => {
 
   //Function to follow a user
   const onClickHandler = async () => {
+    if (!myAccount) return;
+
     setIsLoading(true);
 
     await followUser(isFollowing, account, myAccount)
