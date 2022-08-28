@@ -26,16 +26,12 @@ const Account = ({ account }: Props) => {
   //Fetch current user's data
   useEffect(
     () =>
-      onSnapshot(doc(db, "users", `${user.uid}`), (snapshot: any) => {
-        if (!snapshot.exists()) {
-          router.push("/account");
-        } else {
-          setMyAccount({
-            id: snapshot.id,
-            ...snapshot.data(),
-          });
-        }
-      }),
+      onSnapshot(doc(db, "users", `${user.uid}`), (snapshot: any) =>
+        setMyAccount({
+          id: snapshot.id,
+          ...snapshot.data(),
+        })
+      ),
     [db]
   );
 
