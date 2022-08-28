@@ -22,8 +22,9 @@ const Widgets = ({ displayName, profileUrl }: Props) => {
 
   useEffect(
     () =>
-      onSnapshot(collection(db, "users", user.uid, "following"), (snapshot) =>
-        setFollowingIds(snapshot.docs.map((doc) => doc.id))
+      onSnapshot(
+        collection(db, "users", `${user?.uid}`, "following"),
+        (snapshot) => setFollowingIds(snapshot.docs.map((doc) => doc.id))
       ),
     [db]
   );
@@ -33,7 +34,7 @@ const Widgets = ({ displayName, profileUrl }: Props) => {
       onSnapshot(
         query(
           collection(db, "users"),
-          where("id", "not-in", [...followingIds, user.uid])
+          where("id", "not-in", [...followingIds, user?.uid])
         ),
         (snapshot) =>
           setAccounts(

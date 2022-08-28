@@ -27,7 +27,7 @@ const Feed = ({ displayName, profileUrl }: Props) => {
   return (
     <div className="w-full lg:w-[55%] ">
       <div className="py-7 flex-col space-y-3">
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <Post
             key={post.id}
             post={post}

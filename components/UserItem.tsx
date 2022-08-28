@@ -30,7 +30,7 @@ const UserItem = ({ account }: Props) => {
   //Fetch current user's data
   useEffect(
     () =>
-      onSnapshot(doc(db, "users", `${user.uid}`), (snapshot: any) =>
+      onSnapshot(doc(db, "users", `${user?.uid}`), (snapshot: any) =>
         setMyAccount({
           id: snapshot.id,
           ...snapshot.data(),
@@ -45,7 +45,7 @@ const UserItem = ({ account }: Props) => {
       onSnapshot(
         query(
           collection(db, "users", account.id, "followers"),
-          where("id", "==", user.uid)
+          where("id", "==", user?.uid)
         ),
         (snapshot) => {
           if (snapshot.docs.length > 0) {

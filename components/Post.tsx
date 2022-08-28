@@ -69,7 +69,7 @@ const Post = ({ post, displayName, profileUrl }: Props) => {
     () =>
       onSnapshot(
         query(
-          collection(db, "posts", post.id, "comments"),
+          collection(db, "posts", post?.id, "comments"),
           orderBy("timestamp", "desc")
         ),
         (snapshot: any) =>
@@ -82,7 +82,7 @@ const Post = ({ post, displayName, profileUrl }: Props) => {
 
   useEffect(
     () =>
-      onSnapshot(collection(db, "posts", post.id, "likes"), (snapshot: any) =>
+      onSnapshot(collection(db, "posts", post?.id, "likes"), (snapshot: any) =>
         setLikes(
           snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }))
         )

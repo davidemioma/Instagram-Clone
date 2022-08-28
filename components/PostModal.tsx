@@ -35,7 +35,7 @@ const PostModal = ({ displayName, profileUrl }: Props) => {
     () =>
       onSnapshot(
         query(
-          collection(db, "posts", post.post.id, "comments"),
+          collection(db, "posts", post?.post?.id, "comments"),
           orderBy("timestamp", "desc")
         ),
         (snapshot: any) =>
@@ -43,7 +43,7 @@ const PostModal = ({ displayName, profileUrl }: Props) => {
             snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }))
           )
       ),
-    [db, post.post.id]
+    [db, post?.post?.id]
   );
 
   return (

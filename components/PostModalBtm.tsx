@@ -100,7 +100,7 @@ const PostModalBtm = ({ displayName, profileUrl }: Props) => {
       <div className="flex items-center space-x-3 w-full p-3 pb-2">
         <button
           onClick={() =>
-            likePost(hasLiked, post.post.id, user.uid, displayName, profileUrl)
+            likePost(hasLiked, post.post.id, user?.uid, displayName, profileUrl)
           }
         >
           {hasLiked ? (
@@ -115,7 +115,7 @@ const PostModalBtm = ({ displayName, profileUrl }: Props) => {
         </button>
 
         <button
-          onClick={() => savePost(hasSaved, user.uid, post.post.id, post.post)}
+          onClick={() => savePost(hasSaved, user?.uid, post.post.id, post.post)}
         >
           {hasSaved ? (
             <BsBookmarkFill size={22} className="on-hover" />

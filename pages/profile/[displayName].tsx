@@ -87,7 +87,7 @@ const Profile = () => {
 
   //Set The view to posts
   useEffect(() => {
-    if (displayName !== user.displayName) {
+    if (displayName !== user?.displayName) {
       dispatch(setView("posts"));
     }
   }, [displayName]);
@@ -95,7 +95,7 @@ const Profile = () => {
   //Fetch current user's data
   useEffect(
     () =>
-      onSnapshot(doc(db, "users", `${user.uid}`), (snapshot: any) => {
+      onSnapshot(doc(db, "users", `${user?.uid}`), (snapshot: any) => {
         if (!snapshot.exists()) {
           router.push("/account");
         } else {
@@ -137,7 +137,7 @@ const Profile = () => {
     () =>
       onSnapshot(
         query(
-          collection(db, "users", `${user.uid}`, "saved"),
+          collection(db, "users", `${user?.uid}`, "saved"),
           orderBy("timestamp", "desc")
         ),
         (snapshot) =>
@@ -180,7 +180,7 @@ const Profile = () => {
 
   //Check if current user is following searched user
   useEffect(() => {
-    if (account && user.uid !== account?.id) {
+    if (account && user?.uid !== account?.id) {
       setIsFollowing(
         Followers.findIndex((item) => item.id === user.uid) !== -1
       );

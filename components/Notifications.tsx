@@ -17,7 +17,7 @@ const Notifications = () => {
     () =>
       onSnapshot(
         query(
-          collection(db, "users", `${user.uid}`, "notifications"),
+          collection(db, "users", `${user?.uid}`, "notifications"),
           orderBy("timestamp", "desc")
         ),
         (snapshot) =>
