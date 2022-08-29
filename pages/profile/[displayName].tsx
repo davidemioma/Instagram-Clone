@@ -203,8 +203,8 @@ const Profile = () => {
       </Head>
 
       <Header
-        displayName={myAccount?.displayName}
-        profileUrl={myAccount?.profileUrl}
+        displayName={`${myAccount?.displayName}`}
+        profileUrl={`${myAccount?.profileUrl}`}
       />
 
       <main>
