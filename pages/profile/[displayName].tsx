@@ -154,7 +154,7 @@ const Profile = () => {
     if (account) {
       const unSub = onSnapshot(
         collection(db, "users", account?.id, "followers"),
-        (snapshot) =>
+        (snapshot: any) =>
           setFollowers(
             snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }))
           )
@@ -169,7 +169,7 @@ const Profile = () => {
     if (account) {
       const unSub = onSnapshot(
         collection(db, "users", account?.id, "following"),
-        (snapshot) =>
+        (snapshot: any) =>
           setFollowing(
             snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }))
           )
