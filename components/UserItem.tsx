@@ -72,7 +72,7 @@ const UserItem = ({ account }: Props) => {
 
           <p className="flex-1 text-sm font-semibold">{account.displayName}</p>
 
-          {user.uid !== account.id && (
+          {user?.uid !== account.id && (
             <button
               className={`${
                 isFollowing ? "unfollowBtn" : "followBtn"
