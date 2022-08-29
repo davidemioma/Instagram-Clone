@@ -39,7 +39,7 @@ const UserModal = () => {
           </div>
 
           <div className="py-2 px-3 space-y-2 h-[calc(256px-48px)] overflow-x-hidden overflow-y-scroll scrollbar-hide">
-            {userData.map((data: any) => (
+            {userData?.map((data: any) => (
               <UserItem key={data.id} account={data} />
             ))}
           </div>
