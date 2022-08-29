@@ -78,7 +78,7 @@ const Profile = () => {
   };
 
   //Show the list of followers and followings.
-  const showUsersData = (data, text: string) => {
+  const showUsersData = (data: any, text: string) => {
     dispatch(setUserData(data));
 
     dispatch(setText(text));
