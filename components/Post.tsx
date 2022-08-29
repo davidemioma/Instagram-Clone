@@ -148,7 +148,7 @@ const Post = ({ post, displayName, profileUrl }: Props) => {
         <div className="flex items-center space-x-2">
           <button
             onClick={() =>
-              likePost(hasLiked, post.id, user.uid, displayName, profileUrl)
+              likePost(hasLiked, post.id, user?.uid, displayName, profileUrl)
             }
           >
             {hasLiked ? (
@@ -162,7 +162,7 @@ const Post = ({ post, displayName, profileUrl }: Props) => {
             <BiMessageRounded className="on-hover" size={25} />
           </button>
 
-          <button onClick={() => savePost(hasSaved, user.uid, post.id, post)}>
+          <button onClick={() => savePost(hasSaved, user?.uid, post.id, post)}>
             {hasSaved ? (
               <BsBookmarkFill size={22} className="on-hover" />
             ) : (
