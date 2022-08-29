@@ -220,7 +220,7 @@ const Profile = () => {
             <div className="flex items-center space-x-5 mb-4">
               <h1 className="text-2xl font-light">{account?.displayName}</h1>
 
-              {user.displayName !== displayName && (
+              {user?.displayName !== displayName && (
                 <button
                   className={`${
                     isFollowing ? "unfollowBtn" : "followBtn"
@@ -312,7 +312,7 @@ const Profile = () => {
               <p>Posts</p>
             </button>
 
-            {user.displayName === displayName && (
+            {user?.displayName === displayName && (
               <button
                 onClick={() => dispatch(setView("saved"))}
                 className={`${
@@ -332,7 +332,7 @@ const Profile = () => {
             <UserPosts posts={posts} />
           ) : (
             <div>
-              {user.displayName === displayName && (
+              {user?.displayName === displayName && (
                 <SavedPosts posts={savedPosts} />
               )}
             </div>
@@ -349,8 +349,8 @@ const Profile = () => {
 
       {postModalOpen && (
         <PostModal
-          displayName={myAccount.displayName}
-          profileUrl={myAccount.profileUrl}
+          displayName={`${myAccount?.displayName}`}
+          profileUrl={`${myAccount?.profileUrl}`}
         />
       )}
 
