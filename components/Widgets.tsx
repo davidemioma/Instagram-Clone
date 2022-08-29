@@ -18,7 +18,7 @@ const Widgets = ({ displayName, profileUrl }: Props) => {
 
   const [accounts, setAccounts] = useState<AccountProps[]>([]);
 
-  const [followingIds, setFollowingIds] = useState([]);
+  const [followingIds, setFollowingIds] = useState<any>([]);
 
   useEffect(
     () =>
