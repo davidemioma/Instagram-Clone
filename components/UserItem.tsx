@@ -20,6 +20,8 @@ const UserItem = ({ account }: Props) => {
   const [isFollowing, setIsFollowing] = useState(false);
 
   const onClickHandler = async () => {
+    if (!myAccount) return;
+
     setLoading(true);
 
     await followUser(isFollowing, account, myAccount)
