@@ -28,8 +28,7 @@ import UserPosts from "../../components/UserPosts";
 import SavedPosts from "../../components/SavedPosts";
 import PostModal from "../../components/PostModal";
 import Modal from "../../components/Modal";
-import NumericLabel from "react-pretty-numbers";
-import { option } from "../../util/options";
+import { numberFormatter } from "../../util/options";
 import { followUser } from "../../util/functions";
 import Number from "../../components/Number";
 import UserModal from "../../components/UserModal";
@@ -256,7 +255,7 @@ const Profile = () => {
           <div className="flex flex-col items-center">
             <div className="font-bold">
               {posts.length > 999 ? (
-                <NumericLabel params={option}>{posts.length}</NumericLabel>
+                <p>{numberFormatter(posts.length)}</p>
               ) : (
                 <p>{posts.length}</p>
               )}
@@ -271,7 +270,7 @@ const Profile = () => {
           >
             <div className="font-bold">
               {Followers.length > 999 ? (
-                <NumericLabel params={option}>{Followers.length}</NumericLabel>
+                <p>{numberFormatter(Followers.length)}</p>
               ) : (
                 <p>{Followers.length}</p>
               )}
@@ -288,7 +287,7 @@ const Profile = () => {
           >
             <div className="font-bold">
               {following.length > 999 ? (
-                <NumericLabel params={option}>{following.length}</NumericLabel>
+                <p>{numberFormatter(following.length)}</p>
               ) : (
                 <p>{following.length}</p>
               )}

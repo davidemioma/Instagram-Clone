@@ -1,6 +1,5 @@
 import React from "react";
-import NumericLabel from "react-pretty-numbers";
-import { option } from "../util/options";
+import { numberFormatter } from "../util/options";
 
 interface Props {
   data: any;
@@ -9,14 +8,12 @@ interface Props {
 }
 
 const Number = ({ data, text, isFollower }: Props) => {
+  const number = numberFormatter(data.length);
+
   return (
     <div className="flex items-center space-x-1">
       <div className="font-bold">
-        {data?.length > 999 ? (
-          <NumericLabel params={option}>{data?.length}</NumericLabel>
-        ) : (
-          <p>{data?.length}</p>
-        )}
+        {data?.length > 999 ? <p>{number}</p> : <p>{data?.length}</p>}
       </div>
 
       {isFollower ? (

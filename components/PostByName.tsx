@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CommentProps, LikeProps, PostProps } from "../types";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
-import NumericLabel from "react-pretty-numbers";
-import { option } from "../util/options";
+import { numberFormatter } from "../util/options";
 import { db } from "../firebase";
 import { collection, onSnapshot } from "@firebase/firestore";
 import { useDispatch } from "react-redux";
@@ -73,7 +72,7 @@ const PostByName = ({ post }: Props) => {
               <AiFillHeart size={20} />
 
               {likes.length > 999 ? (
-                <NumericLabel params={option}>{likes.length}</NumericLabel>
+                <p>{numberFormatter(likes.length)}</p>
               ) : (
                 <p>{likes.length}</p>
               )}
@@ -83,7 +82,7 @@ const PostByName = ({ post }: Props) => {
               <FaComment size={20} />
 
               {comments.length > 999 ? (
-                <NumericLabel params={option}>{comments.length}</NumericLabel>
+                <p>{numberFormatter(comments.length)}</p>
               ) : (
                 <p>{comments.length}</p>
               )}

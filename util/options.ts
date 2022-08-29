@@ -1,13 +1,15 @@
-export const option = {
-  justification: "C",
-  locales: "en-AU",
-  currency: false,
-  percentage: false,
-  precision: 2,
-  wholenumber: null,
-  commafy: true,
-  shortFormat: true,
-  shortFormatMinValue: 1000,
-  shortFormatPrecision: 1,
-  title: true,
+export const numberFormatter = (num: number) => {
+  let newNumber = "";
+
+  if (num >= 1000000000) {
+    newNumber = (num / 1000000000).toFixed(1) + "B";
+  } else if (num >= 1000000) {
+    newNumber = (num / 1000000).toFixed(1) + "M";
+  } else if (num >= 1000) {
+    newNumber = (num / 1000).toFixed(1) + "K";
+  } else {
+    newNumber = `${num}`;
+  }
+
+  return newNumber;
 };
