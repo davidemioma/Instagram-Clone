@@ -26,7 +26,7 @@ export const addComment = async (
 export const likePost = async (
   hasLiked: boolean,
   postId: string,
-  userId: string,
+  userId: any,
   displayName: string,
   profileUrl: string
 ) => {
@@ -42,7 +42,7 @@ export const likePost = async (
 
 export const savePost = async (
   hasSaved: boolean,
-  userId: string,
+  userId: any,
   postId: string,
   post: PostProps
 ) => {
