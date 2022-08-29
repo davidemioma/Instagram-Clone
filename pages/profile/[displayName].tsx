@@ -183,7 +183,7 @@ const Profile = () => {
   useEffect(() => {
     if (account && user?.uid !== account?.id) {
       setIsFollowing(
-        Followers.findIndex((item) => item?.id === user?.uid) !== -1
+        Followers.findIndex((item: any) => item?.id === user?.uid) !== -1
       );
     }
   }, [Followers, displayName]);
