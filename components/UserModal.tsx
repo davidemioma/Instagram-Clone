@@ -4,6 +4,7 @@ import { userDataSelector, userTextSelector } from "../store/user-slice";
 import { XIcon } from "@heroicons/react/solid";
 import { setText, setUserData, setUserModalOpen } from "../store/store";
 import UserItem from "./UserItem";
+import { AccountProps } from "../types";
 
 const UserModal = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const UserModal = () => {
           </div>
 
           <div className="py-2 px-3 space-y-2 h-[calc(256px-48px)] overflow-x-hidden overflow-y-scroll scrollbar-hide">
-            {userData.map((data) => (
+            {userData.map((data: any) => (
               <UserItem key={data.id} account={data} />
             ))}
           </div>
