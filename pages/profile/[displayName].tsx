@@ -68,6 +68,8 @@ const Profile = () => {
 
   //Follow and Unfollow a user
   const onClickHandler = async () => {
+    if (!account || !myAccount) return;
+
     setLoading(true);
 
     await followUser(isFollowing, account, myAccount)
